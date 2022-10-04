@@ -1211,7 +1211,7 @@ These are your current Network Settings:
 			IP address:    ${CurrentIPv4addr}
 			Gateway:       ${CurrentIPv4gw}
 
-echo "10.1.10.222"
+echo "10.1.10.1"
 
       {
         echo "IPv4addr=${IPv4addr}"
