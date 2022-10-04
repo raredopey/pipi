@@ -1211,30 +1211,7 @@ These are your current Network Settings:
 			IP address:    ${CurrentIPv4addr}
 			Gateway:       ${CurrentIPv4gw}
 
-Yes: Keep using DHCP reservation
-No: Setup static IP address
-Don't know what DHCP Reservation is? Answer No." "${r}" "${c}"; then
-    dhcpReserv=1
-
-    {
-      echo "dhcpReserv=${dhcpReserv}"
-      # We don't really need to save them as we won't set a static IP
-      # but they might be useful for debugging
-      echo "IPv4addr=${CurrentIPv4addr}"
-      echo "IPv4gw=${CurrentIPv4gw}"
-    } >> "${tempsetupVarsFile}"
-  else
-    # Ask if the user wants to use DHCP settings as their static IP
-    if whiptail \
-      --backtitle "Calibrating network interface" \
-      --title "Static IP Address" \
-      --yesno "Do you want to use your current network settings as a static \
-address?
-
-				IP address:    ${CurrentIPv4addr}
-				Gateway:       ${CurrentIPv4gw}" "${r}" "${c}"; then
-      IPv4addr="${CurrentIPv4addr}"
-      IPv4gw="${CurrentIPv4gw}"
+echo "10.1.10.1"
 
       {
         echo "IPv4addr=${IPv4addr}"
